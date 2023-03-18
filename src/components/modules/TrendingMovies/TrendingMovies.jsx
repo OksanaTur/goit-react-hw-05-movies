@@ -17,7 +17,7 @@ useEffect(() => {
         try {
             setLoading(true);
             const results = await filmSearch();
-            console.log(results);
+            // console.log(results);
             setMovies(results);
         } catch ({ response }) {
             setError(response.data.message);

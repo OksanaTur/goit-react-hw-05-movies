@@ -1,25 +1,26 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import Loader from './shared/loader/Loader';
-import Layout from './modules/Layout/Layout';
 
-const Navbar = lazy(() => import('./modules/Layout/Navbar/Navbar'));
-const HomePage = lazy(() => import('./pages/CastPage/HomePage/HomePage'));
-const MoviePage = lazy(() => import('./pages/CastPage/MoviePage/MoviePage'));
-const MovieDetailsPage = lazy(() => import('./pages/CastPage/MovieDetailsPage/MovieDetailsPage'));
+import Layout from './modules/Layout/Layout';
+import Loader from './shared/loader/Loader';
+
+const Navbar = lazy(() => import('./modules/Navbar/Navbar'));
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const MoviePage = lazy(() => import('./pages/MoviePage/MoviePage'));
+const MovieDetailsPage = lazy(() => import('./pages/MovieDetailsPage/MovieDetailsPage'));
 const CastPage = lazy(() => import('./pages/CastPage/CastPage'));
-const ReviewsPage = lazy(() => import('./pages/CastPage/ReviewsPage/ReviewsPage'));
+const ReviewsPage = lazy(() => import('./pages/ReviewsPage/ReviewsPage'));
 
 export const App = () => {
   return (
     <>
       <BrowserRouter basename="/goit-react-hw-05-movies">
         <Navbar />
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<Loader/>}>
           <Routes>
-            <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
+            <Route path="/" element={<Layout/>}>
+            <Route index element={<HomePage/>} />
               <Route path="movies" element={<MoviePage />} />
               <Route path="movies/:movieId" element={<MovieDetailsPage />}>
                 <Route path="cast" element={<CastPage />} />

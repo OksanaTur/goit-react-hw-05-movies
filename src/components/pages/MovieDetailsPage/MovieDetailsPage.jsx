@@ -36,7 +36,7 @@ const MovieDetailsPage = () => {
         setDate(results.release_date);
       } catch ({ response }) {
         setError(response.data.message);
-        toast.error(`🦄 Sorry,${response.data.message}`);
+        toast.error(`Sorry,${response.data.message}`);
       } finally {
         setLoading(false);
       }
