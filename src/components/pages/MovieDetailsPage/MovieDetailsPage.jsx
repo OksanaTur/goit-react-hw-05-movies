@@ -56,7 +56,7 @@ const MovieDetailsPage = () => {
                     width: 20,
                     height: 20,
                 }} 
-                />
+                /> Go back
             </MovieDetailsButton>
              {loading && <Loader />}
       {error && <ToastContainer theme="colored" />}

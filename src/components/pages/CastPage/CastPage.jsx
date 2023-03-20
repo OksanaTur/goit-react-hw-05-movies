@@ -48,7 +48,7 @@ const CastPage = () => {
     return (
         <>
             {loading && <Loader />} 
-            {error && <ToastContainer theme='colored' />}
+            {error && <ToastContainer theme="colored" />}
             {movies && (
                 <div>
                     <List>{element}</List>

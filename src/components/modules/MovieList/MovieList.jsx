@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { memo } from 'react';
+
 import { Link, useLocation } from 'react-router-dom';
 import { MoviesItem, MovieList } from './MovieList.styled';
 
@@ -15,7 +16,7 @@ const MoviesList = ({ movies }) => {
                 color: 'black',
             }}
                 state={{ from: location }}
-                to={`/movie/${id}`}
+                to={`/movies/${id}`}
             >
                 {title}
             </Link>

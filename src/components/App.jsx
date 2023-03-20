@@ -1,6 +1,8 @@
+// import { GlobalStyle } from 'GlobalStyle';
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+
 
 import Layout from './modules/Layout/Layout';
 import Loader from './shared/loader/Loader';
@@ -15,6 +17,7 @@ const ReviewsPage = lazy(() => import('./pages/ReviewsPage/ReviewsPage'));
 export const App = () => {
   return (
     <>
+      
       <BrowserRouter basename="/goit-react-hw-05-movies">
         <Navbar />
         <Suspense fallback={<Loader/>}>
@@ -31,7 +34,7 @@ export const App = () => {
           </Routes>
         </Suspense>
       </BrowserRouter>
-       <ToastContainer theme="colored" />
+        <ToastContainer theme="colored" />
     </>
   );
 };
